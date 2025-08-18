@@ -36,6 +36,7 @@ HTF Haplotype Assignment:
     - Assign dominant haplotype by max (HTF matched kmers/total matched kmers) proportion
     - Detect coinfections if multiple haplotypes exceed threshold
     - HTF length group frequency distribution
+
 O-antigen Gene P/A Detection:
 - A gene is considered present if:
     (i) coverage ≥ 50%
