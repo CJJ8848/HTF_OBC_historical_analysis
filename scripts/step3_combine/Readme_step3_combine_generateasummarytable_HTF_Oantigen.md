@@ -34,7 +34,7 @@ Column name: HTFgroup_Oantigen_PA
 
 ---
 
-## Step 4: Output Summary Table
+## Step 3: Output Summary Table
 
 Combined columns:  
 sample, HTFgroup_Oantigen_PA, wfgD_PA, rmlC1_PA, tagG1_PA, tagH1_PA, spsA_PA, espE2_PA, espE2length, note
