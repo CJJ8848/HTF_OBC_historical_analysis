@@ -1,7 +1,3 @@
-step0 finish, rm the shs in data done
-start the ref from all to hamming, 
-then run isolate jf and then hamming query isolate then run wg dist... and so on 
-and continue
 
 step0_wholegenome_7refs 
 	step1_generatepaf.sh                  step2_summarypaf_corrected_byhand.sh  step3_searchanddelete.sh
