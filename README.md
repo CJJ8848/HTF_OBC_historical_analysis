@@ -1,8 +1,8 @@
 
-HTF and O-antigen Profiling of Pseudomonas viridiflava in Arabidopsis Metagenomes
+HTF and O-antigen Profiling of ***Pseudomonas viridiflava*** ATUE5 in historical ***Arabidopsis thaliana*** Metagenomes
 ==================================================================================
 
-This repository contains scripts, data, and results for profiling the hypothetical tail fiber (HTF) haplotypes and O-antigen biosynthesis gene content of P. viridiflava isolates from historical herbarium and modern Arabidopsis samples.
+This repository contains scripts, data, and results for profiling the hypothetical tail fiber (HTF) haplotypes and O-antigen biosynthesis gene content of ***P. viridiflava*** isolates from historical herbarium and modern ***Arabidopsis thaliana*** samples.
 
 Analysis pipeline
 --------------
