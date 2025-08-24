@@ -44,3 +44,9 @@ sample, HTFgroup_Oantigen_PA, wfgD_PA, rmlC1_PA, tagG1_PA, tagH1_PA, spsA_PA, es
 ./results/step3_combine/combined_HTF_oantigen_m57_h35.txt
 
 ---
+
+## Step 4: Confidence matrix
+columns: modern57 and h35
+rows: HTF by kmer, HTF by local assembly and HTF modern from previous study
+
+
