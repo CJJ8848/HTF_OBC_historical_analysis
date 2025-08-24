@@ -4,6 +4,36 @@ HTF and O-antigen Profiling of Pseudomonas viridiflava in Arabidopsis Metagenome
 
 This repository contains scripts, data, and results for profiling the hypothetical tail fiber (HTF) haplotypes and O-antigen biosynthesis gene content of P. viridiflava isolates from historical herbarium and modern Arabidopsis samples.
 
+Analysis pipeline
+--------------
+1. HTF Haplotype Assignment:
+
+1.1 [Local Assembly Approach](https://github.com/CJJ8848/HTF_OBC_historical_analysis/blob/db46ec374808d77ba3394c4c6c6bd663b6b60972/scripts/step1_HTFhaplotypes/step1.1_HTF_bylocalassembly/step1.1_HTF_bylocalassembly.md):
+    - Extract reads mapping to HTF/TFA regions
+    - Assemble with SPAdes (skip for modern samples, since we have modern assemblies)
+    - Assign best haplotype based on covered proportion (minimap2)
+1.2 [K-mer Based Approach](https://github.com/CJJ8848/HTF_OBC_historical_analysis/blob/b163377c1c2f099000a1be1d23b7e0a641bad992/scripts/step1_HTFhaplotypes/step1.2_HTF_bykmers_wholegenomeuniquekmers/step1.2_HTF_bykmers_wholegenomeuniquekmers.md):
+    - Build whole-genome-exclusive HTF-unique kmers
+    - Apply iterative Hamming ≥ 2 filtering across haplotypes
+    - Query isolate .jf files (Jellyfish)
+    - Assign dominant haplotype by max (HTF matched kmers/total matched kmers) proportion
+    - Detect coinfections if multiple haplotypes exceed threshold
+    - HTF length group frequency distribution
+
+[2. O-antigen Gene P/A Detection](https://github.com/CJJ8848/HTF_OBC_historical_analysis/blob/b163377c1c2f099000a1be1d23b7e0a641bad992/scripts/step2_Oantigengenes/step2_Oantigengenes.md):
+
+- A gene is considered present if:
+    (i) coverage ≥ 50%
+    (ii) mean depth ≥ 75% of genome-wide average
+- espE2 handled separately via extended mapping and contig rescue
+
+[3. Combined Analysis](https://github.com/CJJ8848/HTF_OBC_historical_analysis/blob/b163377c1c2f099000a1be1d23b7e0a641bad992/scripts/step3_combine/step3_combine_generateasummarytable_HTF_Oantigen.md):
+
+- Merge HTF and OBC profiles
+- Output metadata tables and combined heatmaps
+
+Large data including raw fastq, fasta, reference and so on are stored on Zenodo. Link: 
+
 Directory Structure
 -------------------
 data/
@@ -26,34 +56,4 @@ results/
     - step1_HTFhaplotypes/: HTF haplotype results (assembly/kmer-based)
     - step2_Oantigengenes/: binary P/A gene matrix and espE2 analysis
     - step3_combine/: combined tables and plots (for manuscript figures)
-
-Analysis pipeline
---------------
-HTF Haplotype Assignment:
-
-1. [Local Assembly Approach](https://github.com/CJJ8848/HTF_OBC_historical_analysis/blob/db46ec374808d77ba3394c4c6c6bd663b6b60972/scripts/step1_HTFhaplotypes/step1.1_HTF_bylocalassembly/step1.1_HTF_bylocalassembly.md):
-    - Extract reads mapping to HTF/TFA regions
-    - Assemble with SPAdes (skip for modern samples, since we have modern assemblies)
-    - Assign best haplotype based on covered proportion (minimap2)
-2. K-mer Based Approach:
-    - Build whole-genome-exclusive HTF-unique kmers
-    - Apply iterative Hamming ≥ 2 filtering across haplotypes
-    - Query isolate .jf files (Jellyfish)
-    - Assign dominant haplotype by max (HTF matched kmers/total matched kmers) proportion
-    - Detect coinfections if multiple haplotypes exceed threshold
-    - HTF length group frequency distribution
-
-O-antigen Gene P/A Detection:
-
-- A gene is considered present if:
-    (i) coverage ≥ 50%
-    (ii) mean depth ≥ 75% of genome-wide average
-- espE2 handled separately via extended mapping and contig rescue
-
-Combined Analysis:
-
-- Merge HTF and OBC profiles
-- Output metadata tables and combined heatmaps
-
-Large data including raw fastq, fasta, reference and so on are stored on Zenodo. Link: 
 
