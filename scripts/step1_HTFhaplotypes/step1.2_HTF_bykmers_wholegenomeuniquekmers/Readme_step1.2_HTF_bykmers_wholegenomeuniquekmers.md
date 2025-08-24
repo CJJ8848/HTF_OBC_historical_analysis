@@ -1,35 +1,85 @@
+## HTF K-mer Identification and Coinfection Analysis Pipeline
 
-step0_wholegenome_7refs 
-	step1_generatepaf.sh                  step2_summarypaf_corrected_byhand.sh  step3_searchanddelete.sh
-#in step0 i run minimap2 to find the coordinates for the HTF region in each reference genome, then delete them to have 7 whole genome background that exclude the self HTF region for the kmer calling.
+---
 
-step1.1_refkmers_all_to_wgunique.sh  
-#in step1.1 i run the kmer calling to output 7 sets of kmers that are unique from each other and also exclusive from the 7 representative OTU5 whole genome background.
- 
-step1.2_refkmers_hamming_filtering
-#in step1.2 i run hamming matrix and visualized them, then run R to iteratively filter out any pairs of kmers that have distance <=1. Here we have the final kmers_unique_hamming2
+### `step0_wholegenome_7refs/`
 
-step2.1_generateisolate_jf_kmersm57.sh
-step2.2_generateisolate_jf_kmersh40.sh
-#here i call the isolate kmers jf files
-#h40 i rmdup and use the rmdup fastq to call jf
+- `step1_generatepaf.sh`  
+- `step2_summarypaf_corrected_byhand.sh`  
+- `step3_searchanddelete.sh`  
 
-step3_wg_background_distribution
-readme  step1_dump_wgdistribution_Rvisual.R  step2_calculate_mean_wg_kmercount_asthreshold.sh
+> In **step0**, I run `minimap2` to find the coordinates for the HTF region in each reference genome, then delete them to generate 7 whole-genome backgrounds that exclude the self HTF region for downstream k-mer calling.
 
-#then step3 run wg distribution, first rvisual then calculate mean wg kmer count as the threshold
+---
 
-step4_query_and_filterby_wgthreshold
-#then step4 query the kmer and filter with wg avg, run mix, observe coinfection, select the best matches...
-#here i run first the summary txt including the kmer count of each HTF-isolate pair, then i calculate in R the proportion of HTF kmer to the total matched kmers to any HTF ref of one isolate, then use this as an index to rank the best matches... 
-#also to plot the mix histogram of HTF and wg kmer dist, i run step1.sh to get the wg_p25.c2_depthsummary which including the kmer in long format. then run mix.R to output the dist...
+### `step1.1_refkmers_all_to_wgunique.sh`
 
-step5 run coinfection, run breaking isolates and remove unsure 64, but authenticate PL0240 to be a break, then calculate HTF length group freq difference, box plot and raw data plot with time, and with geography
+> In **step1.1**, I run the k-mer calling to generate 7 sets of kmers that are unique from each other and also exclusive from the 7 representative OTU5 whole genome backgrounds.
 
-after cd to combine folder:
-step1 combine, done
-#in combine with Oantigen and now i have the final main fig
-then cd ../
-step2 final combine local assembly and kmer, give a confidence matrix of HTF calling
+---
 
-done
+### `step1.2_refkmers_hamming_filtering/`
+
+> In **step1.2**, I compute the hamming distance matrix and visualize it, then use R to iteratively filter out any k-mer pairs with distance ≤1.  
+> This yields the final `kmers_unique_hamming2` set.
+
+---
+
+### `step2.1_generateisolate_jf_kmersm57.sh`  
+### `step2.2_generateisolate_jf_kmersh40.sh`
+
+> Here I generate `.jf` files for isolate k-mers.  
+> For H40 samples, I remove duplicates and use the `rmdup` FASTQ to generate `.jf` files.
+
+---
+
+### `step3_wg_background_distribution/`
+
+- `readme`  
+- `step1_dump_wgdistribution_Rvisual.R`  
+- `step2_calculate_mean_wg_kmercount_asthreshold.sh`  
+
+> In **step3**, I analyze whole-genome (WG) k-mer distributions.  
+> First, I visualize the distribution in R, then compute the mean WG k-mer count as a threshold for filtering.
+
+---
+
+### `step4_query_and_filterby_wgthreshold/`
+
+> In **step4**, I query each isolate’s k-mers and filter them using the average WG k-mer threshold.  
+> Then I:
+> - Summarize the raw k-mer counts of each HTF–isolate pair
+> - Use R to calculate the proportion of HTF-specific k-mers to the total matched HTF k-mers for that isolate
+> - Use this index to rank the best HTF matches  
+> - Generate mixture histograms of HTF and WG k-mer distributions
+
+> To do this, I run `step1.sh` to obtain `wg_p25.c2_depthsummary` (long-format k-mer counts), then run `mix.R` to plot the distribution.
+
+---
+
+### `step5/`
+
+> In **step5**, I:
+> - Run coinfection detection
+> - Break ambiguous isolates
+> - Remove 64 uncertain calls  
+> - Confirm `PL0240` as a confident break
+> - Calculate HTF length group frequency differences
+> - Plot boxplots and raw data versus time and geography
+
+---
+
+### Final Combine
+
+#### `combine/step1/`
+
+> In `combine`, I merge the HTF results with O-antigen data.  
+> This now includes the **final main figure**.
+
+#### `../step2/`
+
+> In `step2`, I combine **local assembly** and **k-mer** results to produce a **confidence matrix of HTF calls**.
+
+---
+
+**Done**
