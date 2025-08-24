@@ -11,6 +11,7 @@ data/
     - readme.txt: description of input formats.
 
 scripts/
+    - step0_h40_fastq/: extract ATUE5-mapped reads from historical plant herbarium metagenomes and identify tailocin regions in ATUE5 genomes
     - step1_HTFhaplotypes/: HTF haplotype detection
         - step1.1_HTF_bylocalassembly/: local assembly and mapping-based assignment
         - step1.2_HTF_bykmers_wholegenomeuniquekmers/: kmer filtering, querying, and assignment
@@ -18,6 +19,7 @@ scripts/
     - step3_combine/: integration of HTF and O-antigen data, generation of summary and plots
 
 results/
+    - step0_h40_fastq/: summary table of tailocin presence in ATUE5 genomes
     - step1_HTFhaplotypes/: HTF haplotype results (assembly/kmer-based)
     - step2_Oantigengenes/: binary P/A gene matrix and espE2 analysis
     - step3_combine/: combined tables and plots (for manuscript figures)
@@ -36,7 +38,6 @@ HTF Haplotype Assignment:
     - Assign dominant haplotype by max (HTF matched kmers/total matched kmers) proportion
     - Detect coinfections if multiple haplotypes exceed threshold
     - HTF length group frequency distribution
-
 O-antigen Gene P/A Detection:
 - A gene is considered present if:
     (i) coverage ≥ 50%
