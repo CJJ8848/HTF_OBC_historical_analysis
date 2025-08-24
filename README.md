@@ -8,11 +8,11 @@ Analysis pipeline
 --------------
 HTF Haplotype Assignment:
 
-- [Local Assembly Approach](https://github.com/CJJ8848/HTF_OBC_historical_analysis/blob/db46ec374808d77ba3394c4c6c6bd663b6b60972/scripts/step1_HTFhaplotypes/step1.1_HTF_bylocalassembly/step1.1_HTF_bylocalassembly.md):
+- [Local Assembly Approach](https://github.com/CJJ8848/HTF_OBC_historical_analysis/blob/db46ec374808d77ba3394c4c6c6bd663b6b60972/scripts/step1_HTFhaplotypes/Readme_step1.1_HTF_bylocalassembly/step1.1_HTF_bylocalassembly.md):
     - Extract reads mapping to HTF/TFA regions
     - Assemble with SPAdes (skip for modern samples, since we have modern assemblies)
     - Assign best haplotype based on covered proportion (minimap2)
-- [K-mer Based Approach](https://github.com/CJJ8848/HTF_OBC_historical_analysis/blob/b163377c1c2f099000a1be1d23b7e0a641bad992/scripts/step1_HTFhaplotypes/step1.2_HTF_bykmers_wholegenomeuniquekmers/step1.2_HTF_bykmers_wholegenomeuniquekmers.md):
+- [K-mer Based Approach](https://github.com/CJJ8848/HTF_OBC_historical_analysis/blob/b163377c1c2f099000a1be1d23b7e0a641bad992/scripts/step1_HTFhaplotypes/step1.2_HTF_bykmers_wholegenomeuniquekmers/Readme_step1.2_HTF_bykmers_wholegenomeuniquekmers.md):
     - Build whole-genome-exclusive HTF-unique kmers
     - Apply iterative Hamming ≥ 2 filtering across haplotypes
     - Query isolate .jf files (Jellyfish)
@@ -20,14 +20,14 @@ HTF Haplotype Assignment:
     - Detect coinfections if multiple haplotypes exceed threshold
     - HTF length group frequency distribution
 
-[O-antigen Gene P/A Detection](https://github.com/CJJ8848/HTF_OBC_historical_analysis/blob/b163377c1c2f099000a1be1d23b7e0a641bad992/scripts/step2_Oantigengenes/step2_Oantigengenes.md):
+[O-antigen Gene P/A Detection](https://github.com/CJJ8848/HTF_OBC_historical_analysis/blob/b163377c1c2f099000a1be1d23b7e0a641bad992/scripts/Readme_step2_Oantigengenes/step2_Oantigengenes.md):
 
 - A gene is considered present if:
     (i) coverage ≥ 50%
     (ii) mean depth ≥ 75% of genome-wide average
 - espE2 handled separately via extended mapping and contig rescue
 
-[Combined Analysis](https://github.com/CJJ8848/HTF_OBC_historical_analysis/blob/b163377c1c2f099000a1be1d23b7e0a641bad992/scripts/step3_combine/step3_combine_generateasummarytable_HTF_Oantigen.md):
+[Combined Analysis](https://github.com/CJJ8848/HTF_OBC_historical_analysis/blob/b163377c1c2f099000a1be1d23b7e0a641bad992/scripts/step3_combine/Readme_step3_combine_generateasummarytable_HTF_Oantigen.md):
 
 - Merge HTF and OBC profiles
 - Output metadata tables and combined heatmaps
