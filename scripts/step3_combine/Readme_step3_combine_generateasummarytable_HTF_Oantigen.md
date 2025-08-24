@@ -1,4 +1,4 @@
-"HTF–O–Antigen–Gene Presence Summary and espE2 Integration"
+## HTF–O–Antigen–Gene Presence Summary and espE2 recovering
 
 ## Step 1: Input Files
 
