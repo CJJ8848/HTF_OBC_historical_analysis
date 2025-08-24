@@ -52,6 +52,7 @@ scripts/
 
 results/
 
+    - figures_tables/: Contains all figures and tables used in the manuscript and all analyses
     - step0_h40_fastq/: summary table of tailocin presence in ATUE5 genomes
     - step1_HTFhaplotypes/: HTF haplotype results (assembly/kmer-based)
     - step2_Oantigengenes/: binary P/A gene matrix and espE2 analysis
