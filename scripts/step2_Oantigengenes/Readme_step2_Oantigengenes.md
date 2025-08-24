@@ -7,7 +7,7 @@ From **step1 to step7**, we assessed the presence/absence of six tailocin-associ
   - **Covered proportion** for each gene
   - **Relative read depth** of each isolate’s mapped library over the gene region
 
-> The BAM files were previously generated using `bwa aln`. Example commands are provided in `example_code_data_preprocessing.sh`.
+> The BAM files were previously generated using `bwa aln`. Example commands are provided in `step0/step1.sh`.
 
 - In **step7**, we filtered results using the following thresholds:
   - (i) **Coverage ≥ 50%**
