@@ -31,7 +31,7 @@ Analysis pipeline
 --------------
 HTF Haplotype Assignment:
 
-1. Local Assembly Approach [https://github.com/CJJ8848/HTF_OBC_historical_analysis/blob/db46ec374808d77ba3394c4c6c6bd663b6b60972/scripts/step1_HTFhaplotypes/step1.1_HTF_bylocalassembly/step1.1_HTF_bylocalassembly.md]:
+1. [Local Assembly Approach](https://github.com/CJJ8848/HTF_OBC_historical_analysis/blob/db46ec374808d77ba3394c4c6c6bd663b6b60972/scripts/step1_HTFhaplotypes/step1.1_HTF_bylocalassembly/step1.1_HTF_bylocalassembly.md):
     - Extract reads mapping to HTF/TFA regions
     - Assemble with SPAdes (skip for modern samples, since we have modern assemblies)
     - Assign best haplotype based on covered proportion (minimap2)
