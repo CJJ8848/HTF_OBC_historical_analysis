@@ -1,27 +1,27 @@
-by local assembly:
+## HTF Haplotype Recovery by Local Assembly
 
-historical: later follow before the shtailocin extract read ids, then assembly then map using minimap2
-old wd: /SAN/ugi/plant_genom/jiajucui/4_mapping_to_pseudomonas/tailocin_2024_TF_Tapemeasure/shfortailocin/step1 and step2
-now we dont need the seq results, stop at paf, then using the same pipe like in modern57 to summary...
+### Historical Samples
 
-now we have 9 recovered...
+For historical samples, we extracted reads mapped to the reference tailocin region containing seven HTF haplotypes. Assemblies were performed using these reads, and contigs were aligned to the reference using Minimap2.
 
+- **Step 1:** Successfully assembled tailocin regions for **30 out of 40 historical samples** using locally mapped reads. 
 
-Before, for the HTF extraction, we simply assembled the historical tailocin regions using raw reads mapped to the reference tailocin with seven HTF haplotypes and then minimap the contigs to reference to see if there is any HTF haplotypes present in particular historical sample. 
+- **Step 2:** Identified HTF haplotypes in **24 historical assemblies**.
 
-First step we successfully assembled 30 out of 40 historical samples. 
+- **Step 3:** For MSA, after applying a **65% coverage threshold** to the best-matching reference haplotype, **10 historical HTFs** were retained.
 
-Second step, we have 24 historical HTFs present in the assemblies. 
+- **Step 4:** One of the nucleotide sequences (`PL0046`) was found to be incomplete after translation to amino acids and was excluded.  
+  **Final count:  24 historical HTFs retrieved (9/24 high-confidence)**
 
-Third step, we have 10 good quality historical HTFs survived a 65% covered proportion threshold to their certain reference haplotypes. ((and 57/74 isolates have a covered proportion to the haplotype reference of certain HTF higher than 65%...) so all 47 modern samples are good)
+Later, HTF identity was further confirmed via k-mer presence analysis, which recovered **35 historical HTFs** (including some not retained here due to quality).
 
-And the last step, i translated the 10 nucletide seqs to amino acid and found one PL0046 is incomplete, thus deleted it. Finally we have 9 historical HTFs, with high confidence.
+---
 
-Later, check Kmer accuracy.. Kmer we have 36 recovered...
+### Modern Samples (n = 57)
 
+For modern isolates, we aligned local assemblies to the HTF reference using Minimap2.
 
-
-
-
-modern: run 57 with minimap2 assembly against query... then we have the HTF haplotype by local assembly, select the top matched HTF and TFA by covered_prop (we can see most of them have >98% covered prop to the top HTF ref, along with a good presence of TFA of the same ref, even though sometimes the best TFA is not the best HTF ref).
-later check confidence matrix with kmer.
+- For each sample, the **top-matching HTF and TFA reference** was selected based on **coverage proportion**.
+- Most samples showed **>98% coverage** to their top HTF reference, along with presence of the matching TFA region from the same haplotype.
+- Occasionally, the best-matching TFA did not correspond to the same HTF as the top hit.
+- Final haplotype calls were validated using the **HTF k-mer confidence matrix**.
