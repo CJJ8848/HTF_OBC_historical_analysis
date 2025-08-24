@@ -1,4 +1,4 @@
-## HTF K-mer Identification and Coinfection Analysis Pipeline
+## HTF k-mer identification and additional analysis pipeline
 
 ---
 
@@ -62,7 +62,7 @@
 > In **step5**, I:
 > - Run coinfection detection
 > - Break ambiguous isolates
-> - Remove 64 uncertain calls  
+> - Remove `64.GBR` as a uncertain calls  
 > - Confirm `PL0240` as a confident break
 > - Calculate HTF length group frequency differences
 > - Plot boxplots and raw data versus time and geography
@@ -74,7 +74,7 @@
 #### `combine/step1/`
 
 > In `combine`, I merge the HTF results with O-antigen data.  
-> This now includes the **final main figure**.
+> This is the **final main figure**.
 
 #### `../step2/`
 
