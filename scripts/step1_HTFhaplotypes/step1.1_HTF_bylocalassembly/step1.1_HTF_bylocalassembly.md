@@ -8,10 +8,11 @@ For historical samples, we extracted reads mapped to the reference tailocin regi
 
 - **Step 2:** Identified HTF haplotypes in **24 historical assemblies**.
 
-- **Step 3:** For MSA, after applying a **65% coverage threshold** to the best-matching reference haplotype, **10 historical HTFs** were retained.
+- **Optional step 3:** For MSA, after applying a **65% coverage threshold** to the best-matching reference haplotype, **10 historical HTFs** were retained.
 
-- **Step 4:** One of the nucleotide sequences (`PL0046`) was found to be incomplete after translation to amino acids and was excluded.  
-  **Final count:  24 historical HTFs retrieved (9/24 high-confidence)**
+- **Optional step 4:** One of the nucleotide sequences (`PL0046`) was found to be incomplete after translation to amino acids and was excluded.  
+
+- **Final count:  24 historical HTFs retrieved (9/24 high-confidence)**
 
 Later, HTF identity was further confirmed via k-mer presence analysis, which recovered **35 historical HTFs** (including some not retained here due to quality).
 
