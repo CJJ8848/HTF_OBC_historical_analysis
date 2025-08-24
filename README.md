@@ -20,7 +20,7 @@ HTF Haplotype Assignment:
     - Detect coinfections if multiple haplotypes exceed threshold
     - HTF length group frequency distribution
 
-[O-antigen Gene P/A Detection](https://github.com/CJJ8848/HTF_OBC_historical_analysis/blob/b44b1f41790ae846580de9e3799fcbc371429293/scripts/step2_Oantigengenes/Readme_step2_Oantigengenes.md):
+[O-antigen Gene P/A Detection](https://github.com/CJJ8848/HTF_OBC_historical_analysis/blob/c9a5caed0b13b7241dad6909231597e2aeb0d338/scripts/step2_Oantigengenes/Readme_step2_Oantigengenes.md):
 
 - A gene is considered present if:
     (i) coverage ≥ 50%
