@@ -7,10 +7,12 @@ This repository contains scripts, data, and results for profiling the hypothetic
 Directory Structure
 -------------------
 data/
+
     - modern57.txt, 40h_OTU5.txt: lists of modern/historical samples.
     - readme.txt: description of input formats.
 
 scripts/
+
     - step0_h40_fastq/: extract ATUE5-mapped reads from historical plant herbarium metagenomes and identify tailocin regions in ATUE5 genomes
     - step1_HTFhaplotypes/: HTF haplotype detection
         - step1.1_HTF_bylocalassembly/: local assembly and mapping-based assignment
@@ -19,6 +21,7 @@ scripts/
     - step3_combine/: integration of HTF and O-antigen data, generation of summary and plots
 
 results/
+
     - step0_h40_fastq/: summary table of tailocin presence in ATUE5 genomes
     - step1_HTFhaplotypes/: HTF haplotype results (assembly/kmer-based)
     - step2_Oantigengenes/: binary P/A gene matrix and espE2 analysis
@@ -27,6 +30,7 @@ results/
 Analysis pipeline
 --------------
 HTF Haplotype Assignment:
+
 1. Local Assembly Approach:
     - Extract reads mapping to HTF/TFA regions
     - Assemble with SPAdes (skip for modern samples, since we have modern assemblies)
@@ -38,13 +42,16 @@ HTF Haplotype Assignment:
     - Assign dominant haplotype by max (HTF matched kmers/total matched kmers) proportion
     - Detect coinfections if multiple haplotypes exceed threshold
     - HTF length group frequency distribution
+
 O-antigen Gene P/A Detection:
+
 - A gene is considered present if:
     (i) coverage ≥ 50%
     (ii) mean depth ≥ 75% of genome-wide average
 - espE2 handled separately via extended mapping and contig rescue
 
 Combined Analysis:
+
 - Merge HTF and OBC profiles
 - Output metadata tables and combined heatmaps
 
