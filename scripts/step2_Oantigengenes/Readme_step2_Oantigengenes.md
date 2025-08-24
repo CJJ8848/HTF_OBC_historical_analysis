@@ -1,3 +1,5 @@
+## Oantigen OBC cluster gene P/A analysis
+
 ## historical46_modern57_bybamcov/
 
 From **step1 to step7**, we assessed the presence/absence of six tailocin-associated genes across 46 historical and 57 modern isolates based on BAM coverage.
