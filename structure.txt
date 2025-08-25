@@ -1,50 +1,77 @@
-data
-readme.txt
-results
-scripts
-structure.txt
 
-.//data:
+./data:
 40h_OTU5.txt
+h40_metadata.txt
 modern57.txt
 readme.txt
 
-.//results:
+./results:
+step0_datapreprocessing_tailocin_presence
 step1_HTFhaplotypes
 step2_Oantigengenes
 step3_combine
 
-.//results/step1_HTFhaplotypes:
+./results/step0_datapreprocessing_tailocin_presence:
+step1_h40metadata
+step2_mapdamageplot
+step3_tailocin_presence
+
+./results/step0_datapreprocessing_tailocin_presence/step1_h40metadata:
+h40_metadata.txt
+
+./results/step0_datapreprocessing_tailocin_presence/step2_mapdamageplot:
+toAt
+tops
+
+./results/step0_datapreprocessing_tailocin_presence/step2_mapdamageplot/toAt:
+allinoneCtoT.txt
+toAtallinone_46.png
+toAtallinone_no137no27ESP.png
+
+./results/step0_datapreprocessing_tailocin_presence/step2_mapdamageplot/tops:
+allinoneCtoT.txt
+topsallinone_46.png
+
+./results/step0_datapreprocessing_tailocin_presence/step3_tailocin_presence:
+avg_stats_tailocin.txt
+extracted_tailocin_region.fa
+h40_samples.tsv
+m57_samples.tsv
+region.bed
+tailocin_coverage_summary.tsv
+tailocin_region.fa
+
+./results/step1_HTFhaplotypes:
 step1.1_HTF_bylocalassembly
 step1.2_HTF_bykmers
 
-.//results/step1_HTFhaplotypes/step1.1_HTF_bylocalassembly:
+./results/step1_HTFhaplotypes/step1.1_HTF_bylocalassembly:
 final_h40_m57_HTFhaplotype_bylocalassembly.txt
 historical46paf
 modern57paf
 
-.//results/step1_HTFhaplotypes/step1.1_HTF_bylocalassembly/historical46paf:
+./results/step1_HTFhaplotypes/step1.1_HTF_bylocalassembly/historical46paf:
 mappings
 
-.//results/step1_HTFhaplotypes/step1.1_HTF_bylocalassembly/historical46paf/mappings:
+./results/step1_HTFhaplotypes/step1.1_HTF_bylocalassembly/historical46paf/mappings:
 contigmapping.txt
 h40_HTFhaplotype_bylocalassembly.txt
 samples29.txt
 top_matched_haplotypes_by_propcoverage_detailed.txt
 
-.//results/step1_HTFhaplotypes/step1.1_HTF_bylocalassembly/modern57paf:
+./results/step1_HTFhaplotypes/step1.1_HTF_bylocalassembly/modern57paf:
 modern57_HTFhaplotype_bylocalassembly.txt
 readme
 top_matched_haplotypes_by_propcoverage_detailed.txt
 
-.//results/step1_HTFhaplotypes/step1.2_HTF_bykmers:
+./results/step1_HTFhaplotypes/step1.2_HTF_bykmers:
 kmers_unique_hamming2
 step1_cal_hamming_pairwise_matrix
 step2_isolate_kmers
 step3_query_kmers
 step4_additionalanalysis
 
-.//results/step1_HTFhaplotypes/step1.2_HTF_bykmers/kmers_unique_hamming2:
+./results/step1_HTFhaplotypes/step1.2_HTF_bykmers/kmers_unique_hamming2:
 HTF_p21.F9_unique_filtered_iterative2.txt
 HTF_p23.B8_unique_filtered_iterative2.txt
 HTF_p25.A12_unique_filtered_iterative2.txt
@@ -52,12 +79,21 @@ HTF_p25.C2_unique_filtered_iterative2.txt
 HTF_p26.D6_unique_filtered_iterative2.txt
 HTF_p5.D5_unique_filtered_iterative2.txt
 HTF_p7.G11_unique_filtered_iterative2.txt
+runlocationofkmers
 
-.//results/step1_HTFhaplotypes/step1.2_HTF_bykmers/step1_cal_hamming_pairwise_matrix:
+./results/step1_HTFhaplotypes/step1.2_HTF_bykmers/kmers_unique_hamming2/runlocationofkmers:
+7HTF_dna.txt
+HTF_kmer_positions_all.pdf
+HTF_kmer_positions_combined.pdf
+HTF_kmer_positions_filtered.pdf
+combine.pptx
+location.R
 
-.//results/step1_HTFhaplotypes/step1.2_HTF_bykmers/step2_isolate_kmers:
+./results/step1_HTFhaplotypes/step1.2_HTF_bykmers/step1_cal_hamming_pairwise_matrix:
 
-.//results/step1_HTFhaplotypes/step1.2_HTF_bykmers/step3_query_kmers:
+./results/step1_HTFhaplotypes/step1.2_HTF_bykmers/step2_isolate_kmers:
+
+./results/step1_HTFhaplotypes/step1.2_HTF_bykmers/step3_query_kmers:
 h40sample_bestHTF.txt
 historical40_stacked_PropNorm_byBestHTF.pdf
 m57sample_bestHTF.txt
@@ -67,41 +103,55 @@ newsummarymodern57_tailocin_kmer_propnorm.tsv
 summaryhistorical40_tailocin_after0.65wgavgdepth_filter.tsv
 summarymodern57_tailocin_kmeravgwgdepth_filter.tsv
 
-.//results/step1_HTFhaplotypes/step1.2_HTF_bykmers/step4_additionalanalysis:
+./results/step1_HTFhaplotypes/step1.2_HTF_bykmers/step4_additionalanalysis:
 step1_2breakingisolates
 step2_coinfection
 step3_HTFfreq
 
-.//results/step1_HTFhaplotypes/step1.2_HTF_bykmers/step4_additionalanalysis/step1_2breakingisolates:
+./results/step1_HTFhaplotypes/step1.2_HTF_bykmers/step4_additionalanalysis/step1_2breakingisolates:
 64.GBR_1933b_S36.inclHTF.paf
 PL0240.inclHTF.paf
 
-.//results/step1_HTFhaplotypes/step1.2_HTF_bykmers/step4_additionalanalysis/step2_coinfection:
+./results/step1_HTFhaplotypes/step1.2_HTF_bykmers/step4_additionalanalysis/step2_coinfection:
 
-.//results/step1_HTFhaplotypes/step1.2_HTF_bykmers/step4_additionalanalysis/step3_HTFfreq:
+./results/step1_HTFhaplotypes/step1.2_HTF_bykmers/step4_additionalanalysis/step3_HTFfreq:
 step1_htf_4lengthgroup_frequencies_pointplot.pdf
 step2_1_oantigen_presence_barplot_updated.pdf
 step2_2_HTF_oantigen_timeline_jitter.pdf
 step2_3_HTF_oantigen_dominant_table.tsv
 step3_h34_m57_OTU5candidates_map_HTFshape_yearfill.pdf
 
-.//results/step2_Oantigengenes:
+./results/step2_Oantigengenes:
 espE2_rescue
 historical46_modern57_bybamcov
 readme
 
-.//results/step2_Oantigengenes/espE2_rescue:
+./results/step2_Oantigengenes/espE2_rescue:
 checkespE2_57m
 fish_historical
 
-.//results/step2_Oantigengenes/espE2_rescue/checkespE2_57m:
+./results/step2_Oantigengenes/espE2_rescue/checkespE2_57m:
+final_afterexpasy
 final_sixgenes_withm57epsE2rescued_binary_matrix.tsv
 readme
 
-.//results/step2_Oantigengenes/espE2_rescue/fish_historical:
+./results/step2_Oantigengenes/espE2_rescue/checkespE2_57m/final_afterexpasy:
+39fasta_emboss_transeq-I20250724-161752-0560-416209-p1m.out.txt
+completeopenframe.18empty_39fasta.txt
+completeopenframe.39fasta.txt
+completeopenframe.39fasta.txt.amb
+completeopenframe.39fasta.txt.ann
+completeopenframe.39fasta.txt.bwt
+completeopenframe.39fasta.txt.pac
+completeopenframe.39fasta.txt.sa
+list.sh
+list_present39.txt
+readme
+
+./results/step2_Oantigengenes/espE2_rescue/fish_historical:
 final_sixgenes_withm57_h36_epsE2rescued_binary_matrix.tsv
 
-.//results/step2_Oantigengenes/historical46_modern57_bybamcov:
+./results/step2_Oantigengenes/historical46_modern57_bybamcov:
 Pseudomonas.OTU5_ref_sixgene.paf
 after_step2_coordinates.bed
 final_cov_depth_wide_cat.tsv
@@ -110,7 +160,7 @@ m55_h40.txt
 mv_others.sh
 output.fasta
 
-.//results/step3_combine:
+./results/step3_combine:
 HTF_haplotypes
 combined_HTF_oantigen_m57_h35.txt
 mainfig_HTFoantigen_m53_h34
@@ -119,15 +169,15 @@ readme
 samples_m57_h35.txt
 suppfig1_confidence_matrix_HTF
 
-.//results/step3_combine/HTF_haplotypes:
+./results/step3_combine/HTF_haplotypes:
 form57_h35_HTF_bykmer.txt
 
-.//results/step3_combine/mainfig_HTFoantigen_m53_h34:
+./results/step3_combine/mainfig_HTFoantigen_m53_h34:
 beautify.pptx
 m53_h34_heatmap_sixgene_only_with_HTFanno.pdf
 mh_colorbar.pdf
 
-.//results/step3_combine/suppfig1_confidence_matrix_HTF:
+./results/step3_combine/suppfig1_confidence_matrix_HTF:
 HP12_combined_lengths_sorted.txt
 HTF_kmer.txt
 HTF_mappings.txt
@@ -135,55 +185,72 @@ modern_57_h35_htf_supp_mapping_kmer_with_lengths.tsv
 readme
 step2_Rvisual
 
-.//results/step3_combine/suppfig1_confidence_matrix_HTF/step2_Rvisual:
+./results/step3_combine/suppfig1_confidence_matrix_HTF/step2_Rvisual:
 hist34_htf_heatmap_by_length.pdf
 modern53-infig.txt
 modern53_htf_heatmap_by_length.pdf
 modern57_h35_htf_heatmap_by_length_all.pdf
 modern_57_h35_htf_supp_mapping_kmer_with_lengths.tsv
 
-.//scripts:
+./scripts:
+step0_datapreprocessing_tailocin_presence
 step1_HTFhaplotypes
 step2_Oantigengenes
 step3_combine
 
-.//scripts/step1_HTFhaplotypes:
+./scripts/step0_datapreprocessing_tailocin_presence:
+step1.2_generatetable_examplecode.sh
+step1.2_run_forloop.sh
+step1_extract_Psgenome_from_metagenomes_h40.sh
+step1_modern_example_code_data_preprocessing.sh
+step2_mapdamage
+step3_tailocin_present_stats.sh
+
+./scripts/step0_datapreprocessing_tailocin_presence/step2_mapdamage:
+runstep2.sh
+step1_runmapdamage_At.sh
+step1_runmapdamage_Ps.sh
+step2_generateCtoTfreq_frommapdamagefolder_At.R
+step2_generateCtoTfreq_frommapdamagefolder_Ps.R
+step3_plot_allinone_At_and_Ps_twoplots_h46.R
+
+./scripts/step1_HTFhaplotypes:
 step1.1_HTF_bylocalassembly
 step1.2_HTF_bykmers_wholegenomeuniquekmers
 
-.//scripts/step1_HTFhaplotypes/step1.1_HTF_bylocalassembly:
+./scripts/step1_HTFhaplotypes/step1.1_HTF_bylocalassembly:
+Readme_step1.1_HTF_bylocalassembly.md
 historical40
 modern57
-readme
 summary.sh
 
-.//scripts/step1_HTFhaplotypes/step1.1_HTF_bylocalassembly/historical40:
+./scripts/step1_HTFhaplotypes/step1.1_HTF_bylocalassembly/historical40:
 step1_extractreadsfrom46h
 step2_assembly
 step3_summarycovprop_topselect.sh
 
-.//scripts/step1_HTFhaplotypes/step1.1_HTF_bylocalassembly/historical40/step1_extractreadsfrom46h:
+./scripts/step1_HTFhaplotypes/step1.1_HTF_bylocalassembly/historical40/step1_extractreadsfrom46h:
 extractfastqR1R2for10nsqs.sh
 pipetoextractreadsandcutfastq.sh
 readme
 
-.//scripts/step1_HTFhaplotypes/step1.1_HTF_bylocalassembly/historical40/step2_assembly:
+./scripts/step1_HTFhaplotypes/step1.1_HTF_bylocalassembly/historical40/step2_assembly:
 old
 pipeofassemblyandMSAtree.sh
 
-.//scripts/step1_HTFhaplotypes/step1.1_HTF_bylocalassembly/historical40/step2_assembly/old:
+./scripts/step1_HTFhaplotypes/step1.1_HTF_bylocalassembly/historical40/step2_assembly/old:
 old.sh
 runafterassembly.sh
 tmp.sh
 tmp2.sh
 tmp3.sh
 
-.//scripts/step1_HTFhaplotypes/step1.1_HTF_bylocalassembly/modern57:
+./scripts/step1_HTFhaplotypes/step1.1_HTF_bylocalassembly/modern57:
 runminimapandselecttopmatched_formodern57.sh
 tmp.sh
 
-.//scripts/step1_HTFhaplotypes/step1.2_HTF_bykmers_wholegenomeuniquekmers:
-readme
+./scripts/step1_HTFhaplotypes/step1.2_HTF_bykmers_wholegenomeuniquekmers:
+Readme_step1.2_HTF_bykmers_wholegenomeuniquekmers.md
 step0_wholegenome_7refs
 step1.1_refkmers_all_to_wgunique.sh
 step1.2_refkmers_hamming_filtering
@@ -194,57 +261,62 @@ step4_query_and_filterby_wgthreshold
 step5_additional_analysis_coinfection_Oantigenbreakingisolates_HTFlengthfreq
 tmp
 
-.//scripts/step1_HTFhaplotypes/step1.2_HTF_bykmers_wholegenomeuniquekmers/step0_wholegenome_7refs:
+./scripts/step1_HTFhaplotypes/step1.2_HTF_bykmers_wholegenomeuniquekmers/step0_wholegenome_7refs:
 step1_generatepaf.sh
 step2_summarypaf_corrected_byhand.sh
 step3_searchanddelete.sh
 
-.//scripts/step1_HTFhaplotypes/step1.2_HTF_bykmers_wholegenomeuniquekmers/step1.2_refkmers_hamming_filtering:
+./scripts/step1_HTFhaplotypes/step1.2_HTF_bykmers_wholegenomeuniquekmers/step1.2_refkmers_hamming_filtering:
 readme
 step1_cal_hamming_pairwise_matrix
 step2_R_iteratively_filter_kmers_hammingdistance_morethan1.R
+step3_locationsofkmers
 
-.//scripts/step1_HTFhaplotypes/step1.2_HTF_bykmers_wholegenomeuniquekmers/step1.2_refkmers_hamming_filtering/step1_cal_hamming_pairwise_matrix:
+./scripts/step1_HTFhaplotypes/step1.2_HTF_bykmers_wholegenomeuniquekmers/step1.2_refkmers_hamming_filtering/step1_cal_hamming_pairwise_matrix:
 Rvisualization
 calculate_hamming_matrix.py
 qsubpythonparalell.sh
 
-.//scripts/step1_HTFhaplotypes/step1.2_HTF_bykmers_wholegenomeuniquekmers/step1.2_refkmers_hamming_filtering/step1_cal_hamming_pairwise_matrix/Rvisualization:
+./scripts/step1_HTFhaplotypes/step1.2_HTF_bykmers_wholegenomeuniquekmers/step1.2_refkmers_hamming_filtering/step1_cal_hamming_pairwise_matrix/Rvisualization:
 Rvisual.R
 runlocationofkmers_before_after_hamming
 
-.//scripts/step1_HTFhaplotypes/step1.2_HTF_bykmers_wholegenomeuniquekmers/step1.2_refkmers_hamming_filtering/step1_cal_hamming_pairwise_matrix/Rvisualization/runlocationofkmers_before_after_hamming:
+./scripts/step1_HTFhaplotypes/step1.2_HTF_bykmers_wholegenomeuniquekmers/step1.2_refkmers_hamming_filtering/step1_cal_hamming_pairwise_matrix/Rvisualization/runlocationofkmers_before_after_hamming:
 7HTF_dna.txt
 location.R
 
-.//scripts/step1_HTFhaplotypes/step1.2_HTF_bykmers_wholegenomeuniquekmers/step3_wg_background_distribution:
+./scripts/step1_HTFhaplotypes/step1.2_HTF_bykmers_wholegenomeuniquekmers/step1.2_refkmers_hamming_filtering/step3_locationsofkmers:
+7HTF_dna.txt
+location.R
+
+./scripts/step1_HTFhaplotypes/step1.2_HTF_bykmers_wholegenomeuniquekmers/step3_wg_background_distribution:
 readme
 step1_calculate_mean_wg_kmercount_asthreshold.sh
 step2_clear_bigmodern_random_20percent.sh
 step3_dump_wgdistribution_Rvisual.R
 
-.//scripts/step1_HTFhaplotypes/step1.2_HTF_bykmers_wholegenomeuniquekmers/step4_query_and_filterby_wgthreshold:
+./scripts/step1_HTFhaplotypes/step1.2_HTF_bykmers_wholegenomeuniquekmers/step4_query_and_filterby_wgthreshold:
 step1_HTFkmer_distribution.sh
 step2_mix_HTF_wg_kmerdistributions.R
 step3_query_kmers
 
-.//scripts/step1_HTFhaplotypes/step1.2_HTF_bykmers_wholegenomeuniquekmers/step4_query_and_filterby_wgthreshold/step3_query_kmers:
+./scripts/step1_HTFhaplotypes/step1.2_HTF_bykmers_wholegenomeuniquekmers/step4_query_and_filterby_wgthreshold/step3_query_kmers:
 step1_kmer_h40_filter_0.65avgfinaltableforR.sh
 step2_kmer_modern57_filter_halfmaxdepthfinaltableforR.sh
 step3_rank_best_HTFhaplotype
 
-.//scripts/step1_HTFhaplotypes/step1.2_HTF_bykmers_wholegenomeuniquekmers/step4_query_and_filterby_wgthreshold/step3_query_kmers/step3_rank_best_HTFhaplotype:
+./scripts/step1_HTFhaplotypes/step1.2_HTF_bykmers_wholegenomeuniquekmers/step4_query_and_filterby_wgthreshold/step3_query_kmers/step3_rank_best_HTFhaplotype:
 readme
 step1_propoftotaleachisolate_Rvisualization_historical40.R
 step2_propoftotaleachisolate_Rvisualization_modern57.R
 
-.//scripts/step1_HTFhaplotypes/step1.2_HTF_bykmers_wholegenomeuniquekmers/step5_additional_analysis_coinfection_Oantigenbreakingisolates_HTFlengthfreq:
+./scripts/step1_HTFhaplotypes/step1.2_HTF_bykmers_wholegenomeuniquekmers/step5_additional_analysis_coinfection_Oantigenbreakingisolates_HTFlengthfreq:
 HTFlengthfreq
 authenticate_the2breakingisolates
 coinfection
 readme
 
-.//scripts/step1_HTFhaplotypes/step1.2_HTF_bykmers_wholegenomeuniquekmers/step5_additional_analysis_coinfection_Oantigenbreakingisolates_HTFlengthfreq/HTFlengthfreq:
+./scripts/step1_HTFhaplotypes/step1.2_HTF_bykmers_wholegenomeuniquekmers/step5_additional_analysis_coinfection_Oantigenbreakingisolates_HTFlengthfreq/HTFlengthfreq:
 allOTU5candidates46_withdatesandlocs_uniq.txt
 newsummaryhistorical40_tailocin_kmer_propnorm.tsv
 newsummarymodern57_tailocin_kmer_propnorm.tsv
@@ -253,41 +325,41 @@ step2_OantigenPAgroup_freq_boxplot_scatterplotwith_exactyear.R
 step3_HTFandgeographicmap.R
 tmp489_withdatesandlocs_uniq.txt
 
-.//scripts/step1_HTFhaplotypes/step1.2_HTF_bykmers_wholegenomeuniquekmers/step5_additional_analysis_coinfection_Oantigenbreakingisolates_HTFlengthfreq/authenticate_the2breakingisolates:
+./scripts/step1_HTFhaplotypes/step1.2_HTF_bykmers_wholegenomeuniquekmers/step5_additional_analysis_coinfection_Oantigenbreakingisolates_HTFlengthfreq/authenticate_the2breakingisolates:
 readme
 step1_minimap2toview
 
-.//scripts/step1_HTFhaplotypes/step1.2_HTF_bykmers_wholegenomeuniquekmers/step5_additional_analysis_coinfection_Oantigenbreakingisolates_HTFlengthfreq/authenticate_the2breakingisolates/step1_minimap2toview:
+./scripts/step1_HTFhaplotypes/step1.2_HTF_bykmers_wholegenomeuniquekmers/step5_additional_analysis_coinfection_Oantigenbreakingisolates_HTFlengthfreq/authenticate_the2breakingisolates/step1_minimap2toview:
 runminimap2.sh
 the2fastq
 
-.//scripts/step1_HTFhaplotypes/step1.2_HTF_bykmers_wholegenomeuniquekmers/step5_additional_analysis_coinfection_Oantigenbreakingisolates_HTFlengthfreq/authenticate_the2breakingisolates/step1_minimap2toview/the2fastq:
+./scripts/step1_HTFhaplotypes/step1.2_HTF_bykmers_wholegenomeuniquekmers/step5_additional_analysis_coinfection_Oantigenbreakingisolates_HTFlengthfreq/authenticate_the2breakingisolates/step1_minimap2toview/the2fastq:
 readme
 
-.//scripts/step1_HTFhaplotypes/step1.2_HTF_bykmers_wholegenomeuniquekmers/step5_additional_analysis_coinfection_Oantigenbreakingisolates_HTFlengthfreq/coinfection:
+./scripts/step1_HTFhaplotypes/step1.2_HTF_bykmers_wholegenomeuniquekmers/step5_additional_analysis_coinfection_Oantigenbreakingisolates_HTFlengthfreq/coinfection:
 readme
 
-.//scripts/step1_HTFhaplotypes/step1.2_HTF_bykmers_wholegenomeuniquekmers/tmp:
+./scripts/step1_HTFhaplotypes/step1.2_HTF_bykmers_wholegenomeuniquekmers/tmp:
 tmp_m57.sh
 tmpstep2for2.sh
 
-.//scripts/step2_Oantigengenes:
+./scripts/step2_Oantigengenes:
+Readme_step2_Oantigengenes.md
 checkespE2_contigs
 historical46_modern57_bybamcov
-readme
 
-.//scripts/step2_Oantigengenes/checkespE2_contigs:
+./scripts/step2_Oantigengenes/checkespE2_contigs:
 espE2_coordinates.bed
 espE2_p25c2.fasta
 session1_checkespE2_basedepth
 session2_retrieve_espE2_minimap
 session3_fish_historical
 
-.//scripts/step2_Oantigengenes/checkespE2_contigs/session1_checkespE2_basedepth:
+./scripts/step2_Oantigengenes/checkespE2_contigs/session1_checkespE2_basedepth:
 espE2_base_dep_h40.sh
 espE2_base_dep_m57.sh
 
-.//scripts/step2_Oantigengenes/checkespE2_contigs/session2_retrieve_espE2_minimap:
+./scripts/step2_Oantigengenes/checkespE2_contigs/session2_retrieve_espE2_minimap:
 step1_checkespE2_minimap.sh
 step2.2_reverseminimap_forp5C1_p24B5.sh
 step2.3_p20D4_p6A10_step2_retrieve_add200bp.sh
@@ -298,27 +370,27 @@ step4.2_doexpasymanually_trim_dna_and_aa_msa
 step4_mergeallfastaforexpasy.sh
 step5_generate_sixgenes_binary.sh
 
-.//scripts/step2_Oantigengenes/checkespE2_contigs/session2_retrieve_espE2_minimap/step3_OantigenP_but_espE2notpresent_p22D1_p25C11_p12F2_p24B5_p5C1usetagH1:
+./scripts/step2_Oantigengenes/checkespE2_contigs/session2_retrieve_espE2_minimap/step3_OantigenP_but_espE2notpresent_p22D1_p25C11_p12F2_p24B5_p5C1usetagH1:
 fivesamples.txt
 old
 results
 step1_checkespE2.sh
 tagH1.fasta
 
-.//scripts/step2_Oantigengenes/checkespE2_contigs/session2_retrieve_espE2_minimap/step3_OantigenP_but_espE2notpresent_p22D1_p25C11_p12F2_p24B5_p5C1usetagH1/old:
+./scripts/step2_Oantigengenes/checkespE2_contigs/session2_retrieve_espE2_minimap/step3_OantigenP_but_espE2notpresent_p22D1_p25C11_p12F2_p24B5_p5C1usetagH1/old:
 minimap_results
 p22.D1.espE2.fasta
 p25.C11.espE2half.fasta
 tmp
 
-.//scripts/step2_Oantigengenes/checkespE2_contigs/session2_retrieve_espE2_minimap/step3_OantigenP_but_espE2notpresent_p22D1_p25C11_p12F2_p24B5_p5C1usetagH1/old/minimap_results:
+./scripts/step2_Oantigengenes/checkespE2_contigs/session2_retrieve_espE2_minimap/step3_OantigenP_but_espE2notpresent_p22D1_p25C11_p12F2_p24B5_p5C1usetagH1/old/minimap_results:
 p22.D1_alignment.paf
 p25.C11_alignment.paf
 sumpaf.txt
 
-.//scripts/step2_Oantigengenes/checkespE2_contigs/session2_retrieve_espE2_minimap/step3_OantigenP_but_espE2notpresent_p22D1_p25C11_p12F2_p24B5_p5C1usetagH1/old/tmp:
+./scripts/step2_Oantigengenes/checkespE2_contigs/session2_retrieve_espE2_minimap/step3_OantigenP_but_espE2notpresent_p22D1_p25C11_p12F2_p24B5_p5C1usetagH1/old/tmp:
 
-.//scripts/step2_Oantigengenes/checkespE2_contigs/session2_retrieve_espE2_minimap/step3_OantigenP_but_espE2notpresent_p22D1_p25C11_p12F2_p24B5_p5C1usetagH1/results:
+./scripts/step2_Oantigengenes/checkespE2_contigs/session2_retrieve_espE2_minimap/step3_OantigenP_but_espE2notpresent_p22D1_p25C11_p12F2_p24B5_p5C1usetagH1/results:
 minimap_results
 p12.F2.espE2.fasta
 p22.D1.espE2.fasta
@@ -326,7 +398,7 @@ p25.C11.espE2half.fasta
 p5.C1.espE2half.fasta
 tmp
 
-.//scripts/step2_Oantigengenes/checkespE2_contigs/session2_retrieve_espE2_minimap/step3_OantigenP_but_espE2notpresent_p22D1_p25C11_p12F2_p24B5_p5C1usetagH1/results/minimap_results:
+./scripts/step2_Oantigengenes/checkespE2_contigs/session2_retrieve_espE2_minimap/step3_OantigenP_but_espE2notpresent_p22D1_p25C11_p12F2_p24B5_p5C1usetagH1/results/minimap_results:
 p12.F2_alignment.paf
 p22.D1_alignment.paf
 p24.B5_alignment.paf
@@ -334,25 +406,25 @@ p25.C11_alignment.paf
 p5.C1_alignment.paf
 sumpaf.txt
 
-.//scripts/step2_Oantigengenes/checkespE2_contigs/session2_retrieve_espE2_minimap/step3_OantigenP_but_espE2notpresent_p22D1_p25C11_p12F2_p24B5_p5C1usetagH1/results/tmp:
+./scripts/step2_Oantigengenes/checkespE2_contigs/session2_retrieve_espE2_minimap/step3_OantigenP_but_espE2notpresent_p22D1_p25C11_p12F2_p24B5_p5C1usetagH1/results/tmp:
 
-.//scripts/step2_Oantigengenes/checkespE2_contigs/session3_fish_historical:
+./scripts/step2_Oantigengenes/checkespE2_contigs/session3_fish_historical:
 oldtmpcanberm
 qsub_step1_extractreadsfrom40h_andtrimfastq.sh
 step2_assembly.sh
 step3_pa_epsE2_h40_addtothebinary.sh
 
-.//scripts/step2_Oantigengenes/checkespE2_contigs/session3_fish_historical/oldtmpcanberm:
+./scripts/step2_Oantigengenes/checkespE2_contigs/session3_fish_historical/oldtmpcanberm:
 firsttry_useespE2_p25.c2
 step1_extractreadsfrom40h_andtrimfastq.sh
 tmp_minimap.sh
 tmp_minimap_rev.sh
 
-.//scripts/step2_Oantigengenes/checkespE2_contigs/session3_fish_historical/oldtmpcanberm/firsttry_useespE2_p25.c2:
+./scripts/step2_Oantigengenes/checkespE2_contigs/session3_fish_historical/oldtmpcanberm/firsttry_useespE2_p25.c2:
 step1_extractreadsfrom40h_andtrimfastq.sh
 step2_assembly.sh
 
-.//scripts/step2_Oantigengenes/historical46_modern57_bybamcov:
+./scripts/step2_Oantigengenes/historical46_modern57_bybamcov:
 gene_coordinates.bed
 old.tar.gz
 runall.sh
@@ -365,25 +437,25 @@ step6_generate_table_covprop.sh
 step7_binary_table_75percent_on_both_depth_and_covprop.sh
 tmp
 
-.//scripts/step2_Oantigengenes/historical46_modern57_bybamcov/tmp:
+./scripts/step2_Oantigengenes/historical46_modern57_bybamcov/tmp:
 tmpstep4_tmp2.sh
 
-.//scripts/step3_combine:
+./scripts/step3_combine:
+Readme_step3_combine_generateasummarytable_HTF_Oantigen.md
 espE2_info.tsv
 modern53_infig.txt
 old.tar.gz
-readme_generateasummarytable_HTF_Oantigen
 samples_m57_h35.txt
 step1_generateasummarytable_HTF_Oantigen.sh
 step2_Rplot_HTFwithOantigen.R
 step3_confidencematrix
 tmp_gene_matrix
 
-.//scripts/step3_combine/step3_confidencematrix:
+./scripts/step3_combine/step3_confidencematrix:
 step1_suppfig1_confidencematrix_HTF_mapping_kmer_papersupp.sh
 step2_Rvisual_m57_h35.R
 
-.//scripts/step3_combine/tmp_gene_matrix:
+./scripts/step3_combine/tmp_gene_matrix:
 WfgD.tsv
 m57_espE2_rescued.tsv
 m57_h36_espE2_rescued.tsv
