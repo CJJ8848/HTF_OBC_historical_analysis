@@ -24,12 +24,12 @@ toAt
 tops
 
 ./results/step0_datapreprocessing_tailocin_presence/step2_mapdamageplot/toAt:
-allinoneCtoT.txt
+At46allinoneCtoT.txt
 toAtallinone_46.png
 toAtallinone_no137no27ESP.png
 
 ./results/step0_datapreprocessing_tailocin_presence/step2_mapdamageplot/tops:
-allinoneCtoT.txt
+Ps46allinoneCtoT.txt
 topsallinone_46.png
 
 ./results/step0_datapreprocessing_tailocin_presence/step3_tailocin_presence:
