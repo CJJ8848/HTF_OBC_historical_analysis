@@ -34,7 +34,7 @@ HTF Haplotype Assignment:
 
 Large data including raw fastq, fasta, reference and so on are stored on Zenodo. Link: 
 
-Directory Structure
+[Directory Structure](https://github.com/CJJ8848/HTF_OBC_historical_analysis/blob/01535b6afe4fab72f44866cbcf305e59b1537f87/structure.txt)
 -------------------
 data/
 
