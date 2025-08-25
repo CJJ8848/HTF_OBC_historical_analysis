@@ -43,7 +43,7 @@ data/
 
 scripts/
 
-    - step0_h40_fastq/: extract ATUE5-mapped reads from historical plant herbarium metagenomes and identify tailocin regions in ATUE5 genomes
+    - step0_datapreprocessing_tailocin_presence/: extract ATUE5-mapped reads from historical plant herbarium metagenomes, historical DNA authentication and identify tailocin regions in ATUE5 genomes
     - step1_HTFhaplotypes/: HTF haplotype detection
         - step1.1_HTF_bylocalassembly/: local assembly and mapping-based assignment
         - step1.2_HTF_bykmers_wholegenomeuniquekmers/: kmer filtering, querying, and assignment
@@ -53,7 +53,7 @@ scripts/
 results/
 
     - figures_tables/: Contains all figures and tables used in the manuscript and all analyses
-    - step0_h40_fastq/: summary table of tailocin presence in ATUE5 genomes
+    - step0_datapreprocessing_tailocin_presence/: h40 metadata, historical DNA authentication and summary table of tailocin presence in ATUE5 genomes
     - step1_HTFhaplotypes/: HTF haplotype results (assembly/kmer-based)
     - step2_Oantigengenes/: binary P/A gene matrix and espE2 analysis
     - step3_combine/: combined tables and plots (for manuscript figures)
