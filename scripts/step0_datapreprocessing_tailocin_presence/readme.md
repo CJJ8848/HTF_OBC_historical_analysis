@@ -29,7 +29,7 @@ Ancient DNA authenticity was assessed using mapDamage:
 
 ---
 
-## Step 3: ATUE5 Clade Authentication
+## Step 3: Historical ATUE5 phlogeny reconstruction
 
 To confirm strain identity:
 
