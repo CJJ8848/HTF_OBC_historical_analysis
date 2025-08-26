@@ -6,7 +6,13 @@ This repository contains scripts, data, and results for profiling the hypothetic
 
 Analysis pipeline
 --------------
-HTF Haplotype Assignment:
+[**Data Preprocessing**](https://github.com/JiajunCui-jjc/HTF_OBC_historical_analysis/blob/9bb3d7934662e412b25445301b2b5f12de01196b/scripts/step0_datapreprocessing_tailocin_presence/readme.md)
+    - Extract ATUE5-mapped reads from historical plant herbarium metagenomes
+    - Authenticate historical DNA damage patterns
+    - Historical ATUE5 phlogeny reconstruction
+    - Identify the presence of tailocin region in historical ATUE5 genomes
+
+**HTF Haplotype Assignment**:
 
 - [Local Assembly Approach](https://github.com/CJJ8848/HTF_OBC_historical_analysis/blob/a79e57df19354aae1f019ba7e43ec32cd5af2352/scripts/step1_HTFhaplotypes/step1.1_HTF_bylocalassembly/readme.md):
     - Extract reads mapping to HTF/TFA regions
@@ -20,14 +26,14 @@ HTF Haplotype Assignment:
     - Detect coinfections if multiple haplotypes exceed threshold
     - HTF length group frequency distribution
 
-[O-antigen Gene P/A Detection](https://github.com/CJJ8848/HTF_OBC_historical_analysis/blob/529d4e7d6442762bb58cb634ce890917c9381d2a/scripts/step2_Oantigengenes/readme.md):
+[**O-antigen Gene P/A Detection**](https://github.com/CJJ8848/HTF_OBC_historical_analysis/blob/529d4e7d6442762bb58cb634ce890917c9381d2a/scripts/step2_Oantigengenes/readme.md):
 
 - A gene is considered present if:
     (i) coverage ≥ 50%
     (ii) mean depth ≥ 75% of genome-wide average
 - espE2 handled separately via extended mapping and contig rescue
 
-[Combined Analysis](https://github.com/CJJ8848/HTF_OBC_historical_analysis/blob/775363e05c1ea7ee9c0a56215c49be5d7c1db1e0/scripts/step3_combine/readme.md):
+[**Combined Analysis**](https://github.com/CJJ8848/HTF_OBC_historical_analysis/blob/775363e05c1ea7ee9c0a56215c49be5d7c1db1e0/scripts/step3_combine/readme.md):
 
 - Merge HTF and OBC profiles
 - Output metadata tables and combined heatmaps
@@ -43,7 +49,7 @@ data/
 
 scripts/
 
-    - step0_datapreprocessing_tailocin_presence/: extract ATUE5-mapped reads from historical plant herbarium metagenomes, historical DNA authentication and identify tailocin regions in ATUE5 genomes
+    - step0_datapreprocessing_tailocin_presence/: extract ATUE5-mapped reads from historical plant herbarium metagenomes, historical DNA authentication, ATUE5 phylogeny reconstruction and identify tailocin regions in ATUE5 genomes
     - step1_HTFhaplotypes/: HTF haplotype detection
         - step1.1_HTF_bylocalassembly/: local assembly and mapping-based assignment
         - step1.2_HTF_bykmers_wholegenomeuniquekmers/: kmer filtering, querying, and assignment
