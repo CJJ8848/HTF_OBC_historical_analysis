@@ -9,7 +9,7 @@ This pipeline describes the steps used to extract, authenticate, and analyze his
 A total of 413 globally distributed *A. thaliana* herbarium specimens were screened for the presence of *P. viridiflava* ATUE5.
 
 1. **Host depletion**:
-   - Raw metagenomic reads were mapped to the *A. thaliana* TAIR10 reference genome using BWA.
+   - Raw metagenomic reads were mapped to the *A. thaliana* TAIR10 reference genome using BWA aln.
    - Unmapped reads were retained.
 
 2. **ATUE5 mapping**:
