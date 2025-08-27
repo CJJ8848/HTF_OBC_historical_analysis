@@ -4,6 +4,11 @@ HTF and O-antigen Profiling of ***Pseudomonas viridiflava*** ATUE5 in historical
 
 This repository contains scripts, data, and results for profiling the hypothetical tail fiber (HTF) haplotypes and O-antigen biosynthesis gene content of ***P. viridiflava*** isolates from historical herbarium and modern ***Arabidopsis thaliana*** samples.
 
+Main Figure
+--------------
+
+[HTF - OBC pattern](https://github.com/JiajunCui-jjc/HTF_OBC_historical_analysis/blob/b34c49afdea4813816eaea6753e5745519a0ca9b/results/figures_tables/combine/latest_2025aug_senttotalia.pdf)
+
 Analysis pipeline
 --------------
 [**Data Preprocessing**](https://github.com/JiajunCui-jjc/HTF_OBC_historical_analysis/blob/c80ade65b9c87c8dd9bf999945272349d5a50d29/scripts/step0_datapreprocessing_tailocin_presence/readme.md)
