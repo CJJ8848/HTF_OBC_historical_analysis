@@ -5,17 +5,17 @@ library(tidyr)
 library(ComplexHeatmap)
 library(circlize)
 library(tibble)
-setwd('/SAN/ugi/plant_genom/jiajucui/4_mapping_to_pseudomonas/tailocin_2024_TF_Tapemeasure/2025_summer_paperfig_m57/results/step3_combine/suppfig1_confidence_matrix_HTF')
+
 # === 1️⃣ Load data ===
-df_full <- fread("/SAN/ugi/plant_genom/jiajucui/4_mapping_to_pseudomonas/tailocin_2024_TF_Tapemeasure/2025_summer_paperfig_m57/results/step3_combine/suppfig1_confidence_matrix_HTF/modern_57_h35_htf_supp_mapping_kmer_with_lengths.tsv")
+df_full <- fread("modern_57_h35_htf_supp_mapping_kmer_with_lengths.tsv")
 colnames(df_full)[1] <- "Strain"
 
 # === 2️⃣ Prepare matrix using existing length columns ===
 df_full <- df_full %>%
   select(Strain,
-         `From bigdataset` = HTF_length_from_bigdataset,
-         `From mapping` = mapping_length,
-         `From k-mer` = kmer_length)
+         `Talia. B, 2024` = HTF_length_from_bigdataset,
+         `By Local Assembly` = mapping_length,
+         `By Kmer` = kmer_length)
 
 # === 3️⃣ Define color mapping ===
 base_colors <- c(
@@ -26,7 +26,12 @@ base_colors <- c(
 )
 
 # === 🔁 Heatmap plot function ===
-plot_htf_heatmap <- function(df_mod, output_pdf) {
+plot_htf_heatmap <- function(df_mod, output_pdf, drop_first_row = FALSE, sort_by_mapping_na = FALSE) {
+  # Optional: remove 'Talia. B, 2024' row
+  if (drop_first_row) {
+    df_mod <- df_mod %>% select(-`Talia. B, 2024`)
+  }
+  
   # Reshape to long then wide
   df_long <- df_mod %>%
     pivot_longer(cols = -Strain, names_to = "method", values_to = "length")
@@ -64,31 +69,38 @@ plot_htf_heatmap <- function(df_mod, output_pdf) {
     })
   }
   
-  # === Sort strain order by kmer length group + modern first ===
+  # === Sort strain order ===
   df_kmer <- df_mod %>%
     mutate(
       is_modern = grepl("^p", Strain),
-      kmer_group = ifelse(`From k-mer` %in% names(base_colors),
-                          `From k-mer`,
-                          paste0("other_", `From k-mer`))
-    ) %>%
-    arrange(
+      kmer_group = ifelse(`By Kmer` %in% names(base_colors),
+                          `By Kmer`,
+                          paste0("other_", `By Kmer`)),
+      has_mapping = ifelse(is.na(`By Local Assembly`), 0, 1)
+    )
+  
+  df_kmer <- if (sort_by_mapping_na) {
+    df_kmer %>% arrange(
+      factor(kmer_group, levels = c(names(base_colors), sort(setdiff(unique(kmer_group), names(base_colors))))),
+      desc(has_mapping),
+      Strain
+    )
+  } else {
+    df_kmer %>% arrange(
       factor(kmer_group, levels = c(names(base_colors), sort(setdiff(unique(kmer_group), names(base_colors))))),
       desc(is_modern),
       Strain
-    ) %>%
-    filter(Strain %in% colnames(df_display))
+    )
+  }
   
+  df_kmer <- df_kmer %>% filter(Strain %in% colnames(df_display))
   strain_order <- df_kmer$Strain
-  
-  # Define color of column names
-  label_colors <- ifelse(grepl("^p", strain_order), "black", "#804111")  # black for modern, blue for historical
+  label_colors <- ifelse(grepl("^p", strain_order), "black", "#804111")
   names(label_colors) <- strain_order
   
   # Build matrix and plot
   mat <- as.matrix(df_display[, strain_order])
-  rownames(mat) <- c("From bigdataset", "From mapping", "From k-mer")
-  
+  rownames(mat) <- df_wide[[1]]  
   ht <- Heatmap(
     mat,
     name = "HTF length",
@@ -111,17 +123,17 @@ plot_htf_heatmap <- function(df_mod, output_pdf) {
   
   cat("✅ Saved:", output_pdf, "\n")
 }
-# === 🟢 1. All samples, modern first inside HTF groups ===
+
+# === 🟢 1. All samples ===
 plot_htf_heatmap(df_full, "modern57_h35_htf_heatmap_by_length_all.pdf")
 
-# === 🟢 2. Modern53 only (from file), excluding 64.* ===
+# === 🟢 2. Modern53 only ===
 modern53_list <- fread("modern53-infig.txt", header = FALSE)[[1]]
 df_m53 <- df_full %>% filter(Strain %in% modern53_list)
-
 plot_htf_heatmap(df_m53, "modern53_htf_heatmap_by_length.pdf")
 
-# === 🟢 3. Only historical (not starting with p, not 64.*) ===
+# === 🟢 3. Historical only, with custom sorting and no first row ===
 df_hist_only <- df_full %>%
   filter(!grepl("^p", Strain) & !grepl("^64\\.", Strain))
-
-plot_htf_heatmap(df_hist_only, "hist34_htf_heatmap_by_length.pdf")
+plot_htf_heatmap(df_hist_only, "hist34_htf_heatmap_by_length.pdf",
+                 drop_first_row = TRUE, sort_by_mapping_na = TRUE)
