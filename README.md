@@ -6,7 +6,7 @@ This repository contains scripts, data, and results for profiling the hypothetic
 
 Analysis pipeline
 --------------
-[**Data Preprocessing**](https://github.com/JiajunCui-jjc/HTF_OBC_historical_analysis/blob/9bb3d7934662e412b25445301b2b5f12de01196b/scripts/step0_datapreprocessing_tailocin_presence/readme.md)
+[**Data Preprocessing**](https://github.com/JiajunCui-jjc/HTF_OBC_historical_analysis/blob/c80ade65b9c87c8dd9bf999945272349d5a50d29/scripts/step0_datapreprocessing_tailocin_presence/readme.md)
  
 - Extract ATUE5-mapped reads from historical plant herbarium metagenomes
 - Authenticate historical DNA damage patterns
