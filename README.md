@@ -7,7 +7,7 @@ This repository contains scripts, data, and results for profiling the hypothetic
 Main Figure
 --------------
 
-![HTF - OBC pattern](https://github.com/JiajunCui-jjc/HTF_OBC_historical_analysis/blob/b34c49afdea4813816eaea6753e5745519a0ca9b/results/figures_tables/combine/latest_2025aug_senttotalia.pdf)
+![HTF - OBC pattern](https://github.com/JiajunCui-jjc/HTF_OBC_historical_analysis/blob/8c173d5eb855a45cee0db0378fbd474b5cc27065/results/figures_tables/combine/mainfig.png)
 
 Analysis pipeline
 --------------
